@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OctaAI Music Creator - Account Deletion Request</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #05050f; /* Deep space black */
+            --primary-aura: #00ffff; /* Neon Cyan */
+            --secondary-aura: #913aff; /* Neon Purple */
+            --danger-aura: #ff4444; /* Neon Red for deletion warning */
+            --text-color: #e0e0e0;
+            --glass-bg: rgba(15, 15, 40, 0.5);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --input-bg: rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Black Hole Vortex Background Animation */
+        .vortex-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .vortex-bg::before {
+            content: '';
+            position: absolute;
+            width: 300vw;
+            height: 300vh;
+            /* Radial gradient for the vortex effect */
+            background: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(50, 10, 100, 0.4) 40%, var(--bg-color) 80%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Slow, constant rotation */
+            animation: rotateVortex 120s linear infinite;
+        }
+
+        @keyframes rotateVortex {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .container {
+            max-width: 600px;
+            width: 90%;
+            padding: 20px;
+        }
+
+        /* Glassmorphism Effect */
+        .form-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid var(--glass-border);
+            /* Base Aura/Shadow */
+            box-shadow: 0 8px 32px 0 rgba(145, 58, 255, 0.2);
+            transition: box-shadow 0.5s ease-in-out;
+        }
+
+        /* Vibrating Aura Effect (simulated on hover) */
+        .form-card:hover {
+            /* Adding a slight red tint to the aura on hover for deletion context */
+            box-shadow: 0 8px 40px 0 rgba(145, 58, 255, 0.4), 0 0 20px rgba(255, 68, 68, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8em;
+            color: var(--primary-aura);
+            /* Neon Glow Effect */
+            text-shadow: 0 0 5px var(--primary-aura), 0 0 15px rgba(0, 255, 255, 0.5);
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        /* Warning Box Styling */
+        .warning-box {
+            background-color: rgba(255, 68, 68, 0.1);
+            border: 1px solid var(--danger-aura);
+            color: var(--danger-aura);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: bold;
+            /* Red glow for emphasis */
+            box-shadow: 0 0 10px rgba(255, 68, 68, 0.3);
+        }
+
+        /* Form Element Styling */
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--secondary-aura);
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: var(--input-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-family: 'Exo 2', sans-serif;
+            box-sizing: border-box; /* Ensure padding doesn't affect width */
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-aura);
+            box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+        }
+
+        /* Submit Button Styling */
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            /* Using the danger color for the deletion button */
+            background-color: var(--danger-aura);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
+            text-shadow: 0 0 5px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(255, 68, 68, 0.4);
+        }
+
+        .submit-btn:hover {
+            background-color: #d60000;
+            /* Intense glow on hover */
+            box-shadow: 0 0 20px var(--danger-aura);
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="vortex-bg"></div>
+
+    <div class="container">
+        <div class="form-card">
+            <header>
+                <h1>Account Deletion Request</h1>
+            </header>
+
+            <p>We are sorry to see you go. To proceed, please fill out the information below. This will open your default email application to send the request to our support team.</p>
+            
+            <div class="warning-box">
+                Warning: Deleting your account will permanently remove all your generated music, library data, and subscription information. This action cannot be undone.
+            </div>
+
+            <form id="deleteAccountForm">
+                <div class="form-group">
+                    <label for="email">Registered Email Address (Required)</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter the email linked to your account">
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username (if applicable)</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your OctaAI username">
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">Reason for Deletion (Optional)</label>
+                    <textarea id="reason" name="reason" placeholder="We value your feedback..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Deletion Request</button>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('deleteAccountForm').addEventListener('submit', function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault(); 
+
+            // Collect data from the form fields
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const reason = document.getElementById('reason').value;
+
+            const recipient = "contact@octaverum.com";
+            // The subject is predefined as requested
+            const subject = "Delete My Account Request";
+            
+            // Constructing the email body in a readable format
+            let body = "To the OctaAI Support Team,\n\n";
+            body += "I am requesting the permanent deletion of my OctaAI Music Creator account and all associated data.\n\n";
+            body += "--- Account Details ---\n";
+            body += "Registered Email: " + email + "\n";
+            
+            // Add username if provided
+            if (username) {
+                body += "Username: " + username + "\n";
+            } else {
+                body += "Username: N/A\n";
+            }
+            
+            body += "\n--- Feedback ---\n";
+            // Add reason if provided
+            if (reason) {
+                body += "Reason for deletion:\n" + reason + "\n";
+            } else {
+                body += "Reason for deletion: N/A\n";
+            }
+            
+            body += "\n----------------------\n";
+            body += "I understand that this action is irreversible and will result in the loss of all my generated music and data.\n\n";
+            body += "App Package: com.aihackathonkarisacikartim.god2";
+
+            // Creating the mailto link
+            // We use encodeURIComponent to ensure the body text (including newlines and special characters) is properly formatted for the URL
+            const mailtoLink = "mailto:" + recipient + 
+                               "?subject=" + encodeURIComponent(subject) + 
+                               "&body=" + encodeURIComponent(body);
+
+            // Opening the default email client
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+</html>
