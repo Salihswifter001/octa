@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OctaAI Music Creator - Privacy Policy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #05050f; /* Deep space black */
+            --primary-aura: #00ffff; /* Neon Cyan */
+            --secondary-aura: #913aff; /* Neon Purple */
+            --text-color: #e0e0e0;
+            --glass-bg: rgba(15, 15, 40, 0.5);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Black Hole Vortex Background Animation */
+        .vortex-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        /* Simulating the rotating accretion disk */
+        .vortex-bg::before {
+            content: '';
+            position: absolute;
+            width: 300vw;
+            height: 300vh;
+            /* Radial gradient for the vortex effect */
+            background: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(50, 10, 100, 0.4) 40%, var(--bg-color) 80%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Slow, constant rotation */
+            animation: rotateVortex 120s linear infinite;
+        }
+
+        @keyframes rotateVortex {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        /* Glassmorphism Effect */
+        .policy-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid var(--glass-border);
+            /* Base Aura/Shadow */
+            box-shadow: 0 8px 32px 0 rgba(145, 58, 255, 0.2);
+            transition: box-shadow 0.5s ease-in-out;
+        }
+
+        /* Vibrating Aura Effect (simulated on hover for interaction) */
+        .policy-card:hover {
+            box-shadow: 0 8px 40px 0 rgba(145, 58, 255, 0.4), 0 0 20px rgba(0, 255, 255, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5em;
+            color: var(--primary-aura);
+            /* Neon Glow Effect */
+            text-shadow: 0 0 5px var(--primary-aura), 0 0 15px rgba(0, 255, 255, 0.5);
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--secondary-aura);
+            border-bottom: 1px solid rgba(145, 58, 255, 0.5);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            text-shadow: 0 0 5px rgba(145, 58, 255, 0.3);
+        }
+
+        h3 {
+            color: var(--primary-aura);
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--primary-aura);
+            text-decoration: none;
+            transition: text-shadow 0.3s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            text-shadow: 0 0 5px var(--primary-aura);
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        ul li::before {
+            content: '❯'; /* Futuristic arrow bullet */
+            color: var(--primary-aura);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .meta-info {
+            text-align: center;
+            font-size: 0.9em;
+            color: gray;
+            margin-bottom: 30px;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 20px;
+        }
+
+        code {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="vortex-bg"></div>
+
+    <div class="container">
+        <div class="policy-card">
+            <header>
+                <h1>OctaAI Music Creator</h1>
+                <p>Privacy Policy</p>
+            </header>
+
+            <section>
+                <h2>1. Introduction</h2>
+                <p>Welcome to OctaAI Music Creator (Version 3.0), an AI-powered platform designed to democratize music production. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our application. We are committed to protecting your personal data. OctaAI allows users to generate professional-quality music using text prompts, powered by our proprietary <strong>OctaInitium AI model</strong>.</p>
+            </section>
+
+            <section>
+                <h2>2. Information We Collect</h2>
+                <p>We collect several types of information to provide and improve our services.</p>
+
+                <h3>A. Account and Authentication Data</h3>
+                <p>We utilize <strong>Supabase Auth</strong> for secure user management and session handling. When you register or log in, we collect:</p>
+                <ul>
+                    <li>Email address and authentication tokens.</li>
+                    <li>User profile settings and preferences.</li>
+                </ul>
+
+                <h3>B. Music Generation Data (User Content)</h3>
+                <p>The core functionality relies on the input you provide. We collect and store:</p>
+                <ul>
+                    <li><strong>Text Prompts:</strong> The custom prompts, genre selections (Pop, Rock, Jazz, Electronic, etc.), and personalization inputs (style, tempo, mood) you provide.</li>
+                    <li><strong>Generated Music Files:</strong> The audio files created by the AI, which are stored in your Music Library to enable access, playback (via the modern Music Player), extension (Music Extension feature), download, and sharing.</li>
+                </ul>
+
+                <h3>C. Subscription and Payment Data</h3>
+                <p>We offer Basic, Standard, and Premium (unlimited music generation) plans managed securely via <strong>Google Play Billing</strong>. We do not store sensitive financial information. We retain:</p>
+                <ul>
+                    <li>Subscription status, plan type, and expiration dates.</li>
+                    <li>Purchase history and transaction receipts provided by Google Play.</li>
+                    <li>Usage tracking data for monthly quota management.</li>
+                </ul>
+
+                <h3>D. Usage and Device Data</h3>
+                <p>We automatically collect information when you access the App (Min SDK 26/Android 8.0, Target SDK 35/Android 14), including:</p>
+                <ul>
+                    <li>Device identifiers, model, and operating system information.</li>
+                    <li>App usage statistics and performance logs.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. How We Use Your Information</h2>
+                <p>We use the information collected for the following purposes:</p>
+                <ul>
+                    <li>To provide core services: Generating music based on your prompts.</li>
+                    <li>To manage your user account and ensure secure access.</li>
+                    <li>To process subscription payments and manage quotas.</li>
+                    <li>To communicate with you, including sending real-time notifications when music generation (processed via Background Processing/Foreground service) is complete.</li>
+                    <li>To improve the App functionality (UI built with Jetpack Compose) and the accuracy of the OctaInitium AI model.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Data Security and Storage</h2>
+                <p>We prioritize the security of your data. In line with our application architecture, we implement robust security measures:</p>
+                <ul>
+                    <li><strong>Encrypted Storage:</strong> Sensitive user data is stored using strong encryption methods.</li>
+                    <li><strong>Secure Session Management:</strong> We employ secure practices via Supabase Auth to prevent unauthorized access.</li>
+                    <li><strong>Data Transmission:</strong> All data transmitted between the App and our servers is encrypted.</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>5. Third-Party Service Providers</h2>
+                <p>We rely on essential third-party services to operate the App. We do not sell your personal information.</p>
+                <ul>
+                    <li><strong>Supabase:</strong> Used for authentication, database management, and user data storage.</li>
+                    <li><strong>Google Play Services:</strong> Used for in-app purchases (Google Play Billing).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>6. Data Retention</h2>
+                <p>We retain your personal information and the music generated in your Music Library as long as your account is active. If you choose to delete your account, your data and generated files will be removed from our systems, subject to any legal obligations.</p>
+            </section>
+
+            <section>
+                <h2>7. Ownership of Generated Music</h2>
+                <p>We claim no ownership rights over the music generated by you through the OctaAI Music Creator. Subject to the terms of service and your subscription plan, you retain the rights to use, download, and share the music you create.</p>
+            </section>
+
+            <section>
+                <h2>8. Children's Privacy</h2>
+                <p>Our services are not intended for individuals under the age of 13. We do not knowingly collect personally identifiable information from children under 13.</p>
+            </section>
+
+            <section>
+                <h2>9. Changes to This Privacy Policy</h2>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by updating the "Last Updated" date of this policy. You are advised to review this Privacy Policy periodically for any changes.</p>
+            </section>
+
+            <section>
+                <h2>10. Contact Us</h2>
+                <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at [Lütfen Buraya İletişim E-posta Adresinizi Ekleyin].</p>
+            </section>
+
+            <div class="meta-info">
+                <p>Last Updated: November 1, 2025</p>
+                <p>Package Name: <code>com.aihackathonkarisacikartim.god2</code></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
